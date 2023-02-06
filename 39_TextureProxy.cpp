@@ -29,7 +29,6 @@ void init(void) {
 	glClearDepth(1.0f);
 	glShadeModel(GL_FLAT);
 	glEnable(GL_DEPTH_TEST);
-	makeCheckImage();
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glGenTextures(1, &texName);
 	glBindTexture(GL_TEXTURE_2D, texName);
@@ -39,11 +38,12 @@ void init(void) {
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexImage2D(GL_PROXY_TEXTURE_2D, 0, GL_RGBA, checkImageWidth, checkImageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+	makeCheckImage();
 	glGetTexLevelParameteriv(GL_PROXY_TEXTURE_2D, 0, GL_TEXTURE_WIDTH, &w);
 	if(w == 0) {
-		printf("Texture Loading Not Possible");
+		printf("Texture Loading Not Possible\n");
 	} else {
-		printf("Texture Loading Possible");
+		printf("Texture Loading Possible\n");
 	}
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, checkImageWidth, checkImageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, checkImage);
 }
