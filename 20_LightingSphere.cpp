@@ -73,6 +73,7 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(500, 500);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'L': Toggle Lighting\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

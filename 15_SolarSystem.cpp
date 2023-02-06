@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 static int sun = 0,
 earthyear1 = 0, earthday1 = 0, earthyear2 = 0, earthday2 = 0,
@@ -16,6 +17,17 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Solar System");
 	Init();
+	printf("Press 'Q': Rotate Blue Planet Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'W': Revolve Blue Planet Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'E': Rotate White Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'R': Revolve White Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'T': Rotate Orange Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'Y': Revolve Orange Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'U': Rotate Green Planet Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'I': Revolve Green Planet Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'O': Rotate Red Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'P': Revolve Red Moon Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'A': Rotate Sun Clockwise/Counter-Clockwise(Case Dependent)\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

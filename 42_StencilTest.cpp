@@ -87,6 +87,17 @@ void reshape(int w, int h) {
 	glTranslatef(0.0f, 0.0f, -5.0f);
 }
 
+void keyboard(unsigned char key, int x, int y) {
+	switch(key) {
+	case 'F': case 'f':
+		glutFullScreenToggle();
+		break;
+	case 27:
+		glutLeaveMainLoop();
+		break;
+	}
+}
+
 int main(int argc, char **argv) {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH | GLUT_STENCIL);
@@ -95,6 +106,7 @@ int main(int argc, char **argv) {
 	glutCreateWindow(argv[0]);
 	init();
 	glutReshapeFunc(reshape);
+	glutKeyboardFunc(keyboard);
 	glutDisplayFunc(display);
 	glutMainLoop();
 	return 0;

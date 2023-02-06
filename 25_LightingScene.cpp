@@ -359,6 +359,16 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(1200, 700);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'A': Goto Next Menu\n");
+	printf("Press 'D': Goto Previous Menu\n");
+	printf("Press 'W': Select Next Property\n");
+	printf("Press 'S': Select Previous Property\n");
+	printf("Press 'U': Increase 'X' Component of Property\n");
+	printf("Press 'J': Decrease 'X' Component of Property\n");
+	printf("Press 'I': Increase 'Y' Component of Property\n");
+	printf("Press 'K': Decrease 'Y' Component of Property\n");
+	printf("Press 'O': Increase 'Z' Component of Property\n");
+	printf("Press 'L': Decrease 'Z' Component of Property\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

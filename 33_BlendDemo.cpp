@@ -160,6 +160,10 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(10, 10);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'W': Move up in src Blend Func\n");
+	printf("Press 'S': Move down in src Blend Func\n");
+	printf("Press 'I': Move up in dest Blend Func\n");
+	printf("Press 'K': Move down in dest Blend Func\n");
 	glutReshapeFunc(Reshape);
 	glutDisplayFunc(Display);
 	glutKeyboardFunc(Keyboard);

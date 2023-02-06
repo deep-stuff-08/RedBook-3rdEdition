@@ -15,12 +15,9 @@ GLfloat select_color[] = {0.0f, 1.0f, 0.0f};
 GLfloat normal_color[] = {1.0f, 1.0f, 1.0f};
 unsigned current_property = 0;
 
-FILE *f;
-
 void Keyboard(unsigned char key, int kx, int ky) {
 	switch(key) {
 	case 27:
-		fclose(f);
 		glutLeaveMainLoop();
 		break;
 	case 'F': case 'f':
@@ -310,9 +307,16 @@ int main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(1200, 700);
-	f = fopen("Deep.log", "w");
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'W': Select Next Property\n");
+	printf("Press 'S': Select Previous Property\n");
+	printf("Press 'U': Increase 'X' Component of Property\n");
+	printf("Press 'J': Decrease 'X' Component of Property\n");
+	printf("Press 'I': Increase 'Y' Component of Property\n");
+	printf("Press 'K': Decrease 'Y' Component of Property\n");
+	printf("Press 'O': Increase 'Z' Component of Property\n");
+	printf("Press 'L': Decrease 'Z' Component of Property\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

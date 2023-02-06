@@ -1,5 +1,6 @@
 #include<math.h>
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 #define PI 3.1415926535898
 
@@ -19,6 +20,7 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Hollow Circle");
 	Init();
+	printf("Press 'S': Toggle betweeen Line Loop and Triangle Fan\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

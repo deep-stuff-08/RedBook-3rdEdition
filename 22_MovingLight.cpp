@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 GLint rot_x = 0.0f;
 GLint rot_y = 0.0f;
@@ -18,6 +19,9 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'X': Rotate in X\n");
+	printf("Press 'Y': Rotate in Y\n");
+	printf("Press 'Z': Translate in Z\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

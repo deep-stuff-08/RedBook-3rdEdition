@@ -1,8 +1,9 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 #define MAXZ 8.0f
 #define MINZ -8.0f
-#define INCZ 0.4f
+#define INCZ 0.01f
 
 GLfloat solidZ = MAXZ;
 GLfloat transparentZ = MINZ;
@@ -92,8 +93,6 @@ void Animate(void) {
 void Keyboard(unsigned char key, int x, int y) {
 	switch(key) {
 	case 'a': case 'A':
-		solidZ = MAXZ;
-		transparentZ = MINZ;
 		glutIdleFunc(Animate);
 		break;
 	case 'r': case 'R':
@@ -113,6 +112,8 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(500, 500);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'A': Animate Blending\n");
+	printf("Press 'R': Reset Animation\n");
 	glutReshapeFunc(Reshape);
 	glutKeyboardFunc(Keyboard);
 	glutDisplayFunc(Display);

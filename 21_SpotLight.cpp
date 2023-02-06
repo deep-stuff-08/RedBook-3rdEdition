@@ -1,6 +1,8 @@
 #include<GL/freeglut.h>
 #include<stdio.h>
 
+bool isLight = false;
+
 void Keyboard(unsigned char key, int kx, int ky) {
 	switch(key) {
 	case 27:
@@ -10,6 +12,7 @@ void Keyboard(unsigned char key, int kx, int ky) {
 		glutFullScreenToggle();
 		break;
 	case 'L': case 'l':
+		isLight = !isLight;
 		glutPostRedisplay();
 		break;
 	}
@@ -58,7 +61,6 @@ void Init() {
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, lmodel_ambient);
 
 	glEnable(GL_LIGHT0);
-	glEnable(GL_LIGHTING);
 	
 	glShadeModel(GL_SMOOTH);
 	
@@ -69,6 +71,11 @@ void Init() {
 
 void Display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	if(isLight) {
+		glEnable(GL_LIGHTING);
+	} else {
+		glDisable(GL_LIGHTING);
+	}
 	glutSolidSphere(1.0f, 50, 50);
 	glutSwapBuffers();
 }
@@ -80,6 +87,7 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(500, 500);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'L': Toggle Lighting\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

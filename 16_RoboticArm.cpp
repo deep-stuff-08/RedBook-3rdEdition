@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 static int shoulder = 0, elbow = 0, finger1 = 0, finger2 = 0, finger3 = 0, fingerp1 = 0, fingerp2 = 0, fingerp3 = 0;
 
@@ -14,6 +15,14 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Robotic Arm");
 	Init();
+	printf("Press 'S': Rotate Shoulder Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'E': Rotate Elbow Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'A': Rotate First Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'W': Rotate Second Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'D': Rotate Third Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'J': Rotate Small Joint First Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'I': Rotate Small Joint Second Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
+	printf("Press 'L': Rotate Small Joint Third Finger Clockwise/Counter-Clockwise(Case Dependent)\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);
@@ -31,6 +40,7 @@ void Init() {
 
 void Display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	//gluLookAt(1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 	glPushMatrix();
 		glPushMatrix();
 			glTranslatef(-2.0f, 1.0f, 0.0f);

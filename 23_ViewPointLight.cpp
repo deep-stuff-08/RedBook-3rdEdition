@@ -1,5 +1,6 @@
 #include<GL/freeglut.h>
 #include<math.h>
+#include<stdio.h>
 
 GLfloat angle1 = 0.0f;
 GLfloat rot_torus = 0.0f;
@@ -17,6 +18,7 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'Y': Rotate Camera in Y\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

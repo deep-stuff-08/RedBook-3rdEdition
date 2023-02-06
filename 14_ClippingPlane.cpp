@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 bool isRot = true;
 GLint rot = 0;
@@ -15,6 +16,8 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Clipping Planes");
 	Init();
+	printf("Press 'R': Increment Rotation Angle\n");
+	printf("Press SPACE: Toggle glRotate Before/After glClipPlane\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

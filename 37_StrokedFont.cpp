@@ -121,8 +121,8 @@ void reshape(int w, int h) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch(key) {
-	case ' ':
-		glutPostRedisplay();
+	case 'F': case 'f':
+		glutFullScreenToggle();
 		break;
 	case 27:
 		glutLeaveMainLoop();

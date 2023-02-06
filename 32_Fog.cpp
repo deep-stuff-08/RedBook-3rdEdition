@@ -1,5 +1,6 @@
 #include<GL/freeglut.h>
 #include<math.h>
+#include<stdio.h>
 
 GLint fogmode;
 
@@ -72,6 +73,9 @@ void Reshape(int w, int h) {
 void Keyboard(unsigned char key, int x, int y) {
 	switch(key) {
 	case 'f': case 'F':
+		glutFullScreenToggle();
+		break;
+	case ' ':
 		if(fogmode == GL_EXP) {
 			fogmode = GL_EXP2;
 		} else if(fogmode == GL_EXP2) {
@@ -95,6 +99,7 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(10, 10);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'SPACE': Toggle between Linear, Exponential and Exponential2 Fog\n");
 	glutReshapeFunc(Reshape);
 	glutKeyboardFunc(Keyboard);
 	glutDisplayFunc(Display);

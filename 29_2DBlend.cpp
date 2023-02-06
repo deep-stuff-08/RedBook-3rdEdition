@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 static bool isYellowFirst = true;
 
@@ -71,6 +72,7 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(500, 500);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'T': Toggle First Rendering Primitive\n");
 	glutReshapeFunc(Reshape);
 	glutKeyboardFunc(Keyboard);
 	glutDisplayFunc (Display);

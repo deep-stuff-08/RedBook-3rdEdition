@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 #define SOLID 0
 #define BUG 1
@@ -17,8 +18,12 @@ int main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	glutInitWindowPosition(50, 50);
 	glutInitWindowSize(800, 600);
-	glutCreateWindow("Hollow Circle");
+	glutCreateWindow("Polygon Stipple");
 	Init();
+	printf("Press '1': Show Soild Polygon\n");
+	printf("Press '2': Show Halftone Stippled Polygon\n");
+	printf("Press '3': Show Fly Stippled Polygon\n");
+	printf("Press '4': Show Avengers Logo Stippled Polygon\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Reshape);
 	glutKeyboardFunc(Keyboard);

@@ -99,6 +99,9 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(900, 700);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'R': Increase/Decrease(Case-Dependent) Red Component of Material\n");
+	printf("Press 'G': Increase/Decrease(Case-Dependent) Green Component of Material\n");
+	printf("Press 'B': Increase/Decrease(Case-Dependent) Blue Component of Material\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

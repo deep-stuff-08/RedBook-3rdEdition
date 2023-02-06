@@ -70,10 +70,11 @@ void reshape(int w, int h) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch(key) {
+	case 'F': case 'f':
+		glutFullScreenToggle();
+		break;
 	case 27:
 		glutLeaveMainLoop();
-		break;
-	default:
 		break;
 	}
 }

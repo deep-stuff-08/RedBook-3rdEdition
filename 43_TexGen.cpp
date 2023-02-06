@@ -83,38 +83,35 @@ void Reshape(int w, int h) {
 
 void Keyboard(unsigned char key, int x, int y) {
 	switch(key) {
-	case 'e':
-	case 'E':
+	case 'F': case 'f':
+		glutFullScreenToggle();
+		break;
+	case 'e': case 'E':
 		currentGenMode = GL_EYE_LINEAR;
 		currentPlane = GL_EYE_PLANE;
 		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, currentGenMode);
 		glTexGenfv(GL_S, currentPlane, currentCoeff);
 		glutPostRedisplay();
 		break;
-	case 'o':
-	case 'O':
+	case 'o': case 'O':
 		currentGenMode = GL_OBJECT_LINEAR;
 		currentPlane = GL_OBJECT_PLANE;
 		glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, currentGenMode);
 		glTexGenfv(GL_S, currentPlane, currentCoeff);
 		glutPostRedisplay();	
 		break;
-	case 's':
-	case 'S':
+	case 's': case 'S':
 		currentCoeff = slanted;
 		glTexGenfv(GL_S, currentPlane, currentCoeff);
 		glutPostRedisplay();
 		break;
-	case 'x':
-	case 'X':
+	case 'x': case 'X':
 		currentCoeff = xequalzero;
 		glTexGenfv(GL_S, currentPlane, currentCoeff);
 		glutPostRedisplay();
 		break;
 	case 27:
 		glutLeaveMainLoop();
-		break;
-	default:
 		break;
 	}
 }
@@ -134,6 +131,10 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("Press 'E': Calulate Tex-Coords for Eye Space\n");
+	printf("Press 'O': Calulate Tex-Coords for Object Space\n");
+	printf("Press 'S': Calulate Tex-Coords Slanted\n");
+	printf("Press 'X': Calulate Tex-Coords Normally\n");
 	glutDisplayFunc(Display);
 	glutKeyboardFunc(Keyboard);
 	glutReshapeFunc(Reshape);

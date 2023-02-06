@@ -1,6 +1,7 @@
 #include<GL/freeglut.h>
 #define _USE_MATH_DEFINES
 #include<math.h>
+#include<stdio.h>
 
 GLuint idTorus;
 
@@ -86,6 +87,9 @@ void resize(int w, int h) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch(key) {
+	case 'F': case 'f':
+		glutFullScreenToggle();
+		break;
 	case 'x': case 'X':
 		glRotatef(30, 1.0f, 0.0f, 0.0f);
 		glutPostRedisplay();
@@ -111,6 +115,9 @@ int main(int argc, char **argv) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutCreateWindow(argv[0]);
 	init();
+	printf("Press 'X': Rotate on X Axis\n");
+	printf("Press 'Y': Rotate on Y Axis\n");
+	printf("Press 'I': Reset Torus\n");
 	glutReshapeFunc(resize);
 	glutKeyboardFunc(keyboard);
 	glutDisplayFunc(display);

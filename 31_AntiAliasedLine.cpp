@@ -86,7 +86,8 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(600, 600);
 	glutCreateWindow(argv[0]);
 	Init();
-
+	printf("Press 'R': Rotate Lines\n");
+	printf("Press SPACE: Toggle Anti-Aliasing\n");
 	glutReshapeFunc(Reshape);
 	glutDisplayFunc(Display);
 	glutKeyboardFunc(Keyboard);

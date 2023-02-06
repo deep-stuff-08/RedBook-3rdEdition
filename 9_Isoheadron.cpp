@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 #define SPEED 0.1
 #define X 0.525731112119133606
@@ -23,6 +24,7 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("Isoheadron");
 	Init();
+	printf("Press SPACE: Toggle Animation On/Off\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Reshape);
 	glutKeyboardFunc(Keyboard);

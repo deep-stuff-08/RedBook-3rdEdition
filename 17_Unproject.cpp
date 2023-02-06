@@ -59,6 +59,7 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow(argv[0]);
 	Init();
+	printf("'Left Mouse Click': Print Unprojected coordinates\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc (Reshape);
 	glutMouseFunc(Mouse);

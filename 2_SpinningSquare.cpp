@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 GLfloat spin = 0.0f;
 
@@ -15,6 +16,8 @@ int main(int argc, char **argv) {
 	glutInitWindowSize(800, 600);
 	glutCreateWindow("White Spinning Square");
 	Init();
+	printf("'Left Mouse Click': start animation\n");
+	printf("'Right Mouse Click': stop animation\n");
 	glutDisplayFunc(Display);
 	glutReshapeFunc(Resize);
 	glutKeyboardFunc(Keyboard);

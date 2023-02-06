@@ -1,4 +1,5 @@
 #include<GL/freeglut.h>
+#include<stdio.h>
 
 #define checkImageWidth 80
 #define checkImageHeight 80
@@ -83,6 +84,9 @@ void reshape(int w, int h) {
 
 void keyboard(unsigned char key, int x, int y) {
 	switch(key) {
+	case 'F': case 'f':
+		glutFullScreenToggle();
+		break;
 	case 's': case 'S':
 		glBindTexture(GL_TEXTURE_2D, texName);
 		glTexSubImage2D(GL_TEXTURE_2D, 0, 8, 8, checkSubImageWidth, checkSubImageHeight, GL_RGBA, GL_UNSIGNED_BYTE, subImage);
@@ -108,6 +112,8 @@ int main(int argc, char **argv) {
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow(argv[0]);
 	init();
+	printf("Press 'S': Enable Sub-Texture\n");
+	printf("Press 'R': Disable Sub-Texture\n");
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
