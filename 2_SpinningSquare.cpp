@@ -54,7 +54,7 @@ void Keyboard(unsigned char key, int x, int y) {
 }
 
 void Update() {
-	spin = spin + 0.02f;
+	spin = spin + 0.2f;
 	if(spin > 360.0f) {
 		spin -= 360.0f;
 	}
